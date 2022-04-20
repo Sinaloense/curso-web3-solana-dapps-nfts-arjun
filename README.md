@@ -92,6 +92,11 @@
 
 ### Ver wallet
 `solana address`
+<details>
+    <summary>address</summary>
+    `BAnWk3cRAha13xL2ppzHE4Vcm1m2ebiTGs6GRWr4kAJ9`
+</details>
+
 
 ### Ver balance de wallet
 `solana balance --url devnet`
@@ -107,13 +112,21 @@ https://explorer.solana.com/?cluster=devnet
 ## Instalar spl-token-cli
 `cargo install spl-token-cli`
 
-### Crear token (regresara un tokenAddress, hay que guardarlo)
+### Crear token (regresara un tokenAddress, hay que guardarlo):
 `spl-token create-token --url devnet`
+<details>
+    <summary>tokenAddress</summary>
+    `EMHwF2EJ6kifPTxjtYgjV6rDncxCXhd6bP6LGUETvPZq`
+</details>
 
 ### Crear cuenta dentro de la wallet que pueda almacenar el token creado (Regresara un tokenAccountAddress, hay que guardarlo)
 `spl-token create-account { tokenAddress } --url devnet`
+<details>
+    <summary>tokenAccountAddress</summary>
+    `GgzDRVMC4sfRcUFFENQZRPH51cVySDJqATJJvmNDhYqw`
+</details>
 
-### Ver balance del token
+### Ver balance del token disponible
 `spl-token balance { tokenAddress } --url devnet`
 
 ### Mintear tokens (1000 tokens)
@@ -129,4 +142,18 @@ https://explorer.solana.com/?cluster=devnet
 `spl-token burn { tokenAccountAddress } 100 --url devnet`
 
 ### Enviar tokens a wallet de terceros (50 tokens)
-`spl-token burn { tokenAddress } 50 { thirdPartyWalletAddress } --url devnet --allow-unfunded-recipient --fund-recipient`
+`spl-token transfer { tokenAddress } 50 { thirdPartyWalletAddress } --url devnet --allow-unfunded-recipient --fund-recipient`
+
+
+
+# Sección 4
+## Crear proyecto
+`anchor init mycalculatordapp`
+###
+`cd mycalculatordapp`
+
+### Build project
+`anchor build`
+
+### Probar programa
+`anchor test`
