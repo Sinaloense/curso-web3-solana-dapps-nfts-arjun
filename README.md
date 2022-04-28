@@ -157,3 +157,12 @@ https://explorer.solana.com/?cluster=devnet
 
 ### Probar programa
 `anchor test`
+
+
+# Sección 5
+## Instalar Metaplex CLI (https://github.com/metaplex-foundation/metaplex)
+`yarn install --cwd metaplex-master/js/`
+### Instalar ts-node
+`npm install -g ts-node`
+### Comprobar versión MetaPlex
+`ts-node js/packages/cli/src/candy-machine-v2-cli.ts --version`
