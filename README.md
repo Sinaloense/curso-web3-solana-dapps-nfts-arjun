@@ -162,7 +162,35 @@ https://explorer.solana.com/?cluster=devnet
 # Sección 5
 ## Instalar Metaplex CLI (https://github.com/metaplex-foundation/metaplex)
 `yarn install --cwd metaplex-master/js/`
+
 ### Instalar ts-node
 `npm install -g ts-node`
+
 ### Comprobar versión MetaPlex
 `ts-node js/packages/cli/src/candy-machine-v2-cli.ts --version`
+
+### Crear wallet
+`solana-keygen new --outfile ~/.config/solana/devnet.json`
+
+### Ver wallet
+`solana address`
+<details>
+    <summary>address</summary>
+    `4NNeWJgTBGj3JN7VbBJLEVtncb4oNfGPhXa55qGE9E7g`
+</details>
+
+###
+`solana config set --keypair ~/.config/solana/devnet.json`
+
+### Asignar tokens a la wallet
+`solana airdrop 2 --url devnet`
+
+## Generar configuracion para subir NFTS y obtener NFT Contract public key
+`ts-node ../metaplex-master/js/packages/cli/src/candy-machine-v2-cli.ts upload -e devnet -k ~/.config/solana/devnet.json -cp config.json ./assets`
+<details>
+    <summary>nft contact address</summary>
+    `9YF1tKr3tJBKKD9Ryz3UTXkEvDrLydM2aE89gEEchFPx`
+</details>
+
+## Verificar que los NFTS se subieron
+`ts-node ../metaplex-master/js/packages/cli/src/candy-machine-v2-cli.ts verify_upload -e devnet -k ~/.config/solana/devnet.json`
